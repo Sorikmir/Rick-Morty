@@ -1,0 +1,19 @@
+<div class="row">
+<ng-container *ngFor="let character of characters">
+    <div class="col-3 p-2">
+        <div class="card" style="width: 18rem;">
+            <img [src]="character.image" class="card-img-top" alt="character.name">
+            <div class="card-body">
+              <h5 class="card-title">{{ character.name }}</h5>
+              <p class="card-text">
+                {{ character.status }} - {{ character.species }} <br>
+                Last known location: <br> <a [href]="character.location.url">{{ character.location.name }}</a><br>
+                First seen: <br> <a [href]="character.origin.url">{{ character.origin.name }}</a><br>
+              </p>
+              <a [routerLink]="['/characters', character.id]" class="btn btn-primary">Go to profile</a>
+            </div>
+          </div>
+    </div>
+</ng-container>
+</div>
+
