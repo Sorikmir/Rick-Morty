@@ -1,0 +1,18 @@
+
+<div class="row">
+    <div class="col-6 p-2">
+      <div class="card" style="width: 18rem;">
+        <img [src]="(character$ | async)?.image" class="card-img-top" [alt]="(character$ | async)?.name">
+        <div class="card-body">
+          <h5 class="card-title">{{ (character$ | async)?.name }}</h5>
+          <p class="card-text">
+            {{ (character$ | async)?.status }} - {{ (character$ | async)?.species }} <br>
+            Last known location: <br>
+            <a [href]="(character$ | async)?.location?.url">{{ (character$ | async)?.location?.name }}</a> <br>
+            First seen in: <br>
+            <a [href]="(character$ | async)?.origin?.url">{{ (character$ | async)?.origin?.name }}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
